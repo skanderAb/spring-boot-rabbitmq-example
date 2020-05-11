@@ -17,11 +17,13 @@ public class SpringBootRabbitMQApplication {
 
 	public final static String SFG_MESSAGE_QUEUE = "sfg-message-queue";
 
+	//Creation of queue
 	@Bean
 	Queue queue() {
 		return new Queue(SFG_MESSAGE_QUEUE, false);
 	}
 
+	//Creation of exchange
 	@Bean
 	TopicExchange exchange() {
 		return new TopicExchange("spring-boot-exchange");
